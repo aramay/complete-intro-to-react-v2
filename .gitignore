@@ -1,0 +1,13 @@
+node_modules/
+*bundle.js
+*bundle*
+.DS_Store
+<<<<<<< HEAD
+*.map
+*.bundle.js
+_site/
+.sass-cache/
+*.iml
+.idea/
+=======
+>>>>>>> origin/start
