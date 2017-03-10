@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link href="css/style.css" rel="stylesheet">-->
+    </head>
+    <body>
+
+        <div id="app">React has not yet rendered
+            
+        </div>
+
+
+        
+        <script src="node_modules/react/dist/react.js"></script>
+        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+        
+        <script>
+
+        // var firstComponent = <h1>hello</h1>;//this throws an error
+
+        var firstComponent = React.createClass({
+            render: function(){
+                return (
+                    React.DOM.div(null,
+                    React.DOM.h1(null, "this is react firstComponent"))
+                )
+            }
+        })
+
+            ReactDOM.render(
+                React.createElement(firstComponent),
+                // firstComponent, this will not work, check console errors
+                document.getElementById('app')
+            );
+
+        </script>
+    
+    </body>
+</html>
