@@ -20,10 +20,6 @@
     "lodash": "4.16.2",
     "preact": "^6.4.0",
     "preact-compat": "^3.9.3",
-<<<<<<< HEAD
-    "preact-render-to-string": "^3.3.0",
-=======
->>>>>>> origin/start
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-redux": "4.4.0",
