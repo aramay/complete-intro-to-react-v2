@@ -17,26 +17,7 @@
         <script src="node_modules/react/dist/react.js"></script>
         <script src="node_modules/react-dom/dist/react-dom.js"></script>
         
-        <script>
-
-        // var firstComponent = <h1>hello</h1>;//this throws an error
-
-        var firstComponent = React.createClass({
-            render: function(){
-                return (
-                    React.DOM.div(null,
-                    React.DOM.h1(null, "this is react firstComponent"))
-                )
-            }
-        })
-
-            ReactDOM.render(
-                React.createElement(firstComponent),
-                // firstComponent, this will not work, check console errors
-                document.getElementById('app')
-            );
-
-        </script>
+        <script src="js/ClientApp.js"></script>
     
     </body>
 </html>
