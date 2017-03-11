@@ -1,35 +1,25 @@
-// var firstComponent = <h1>hello</h1>;//this throws an error
-
-var MyTitle = React.createClass({
-    render: function(){
-        console.log(this.props)
-        return(
-            React.DOM.div(null,
-            // React.DOM.h1(null, "this was second component")
-            React.DOM.h1({style: {color: this.props.color} }, this.props.title)
-            )
-        )
-    }
-})
+import React from 'react'
+import ReactDOM from 'react-dom'
+import MyTitle from './MyTitle'
 
 var MyTitleFactory = React.createFactory(MyTitle)
 
 var firstComponent = React.createClass({
-    render: function(){
-        return (
-            React.DOM.div(null,
-            // React.DOM.h1(null, "this is react firstComponent"))
-            // React.createElement(MyTitle),
-            // React.createElement(MyTitle)
-            MyTitleFactory({title: "this is being passed as props", color: "goldenrod"}),
-            MyTitleFactory({title: "this as well, props", color: "aquamarine"})
-            )
+  render: function () {
+    return (
+        React.DOM.div(null,
+        // React.DOM.h1(null, "this is react firstComponent"))
+        // React.createElement(MyTitle),
+        // React.createElement(MyTitle)
+            MyTitleFactory({title: 'this is being passed as props', color: 'goldenrod'}),
+            MyTitleFactory({title: 'this as well, props', color: 'aquamarine'})
         )
-    }
+    )
+  }
 })
 
 ReactDOM.render(
     React.createElement(firstComponent),
     // firstComponent, this will not work, check console errors
     document.getElementById('app')
-);
+)
