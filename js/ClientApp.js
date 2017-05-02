@@ -7,10 +7,11 @@ import '../public/normalize.css'
 import '../public/style.css'
 
 const App = React.createClass({
-  render: function () {
+  render () {
     return (
         <BrowserRouter>
             <div className='app'>
+
                 <Match exactly pattern='/' component={Landing}></Match>
                 <Match pattern='/search' component={Search}></Match>
             </div>
