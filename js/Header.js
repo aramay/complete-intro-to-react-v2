@@ -1,17 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { connect } from 'react-redux'
+import { setSearchTerm } from './actionsCreators'
 
 class Header extends React.Component {
-  render () {
-   console.log(this.props)
+  constructor (props) {
+    super(props)
 
-     let utilSpace
-     //showSearch is true by default when passed in as props
-     if(this.props.showSearch){
-        utilSpace = <input onChange={this.props.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='Search' />
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
+  }
+  handleSearchTermChange (event) {
+    this.props.dispatch(setSearchTerm(event.target.value))
+  }
+  render () {
+    console.log(this.props)
+
+    let utilSpace
+     // showSearch is true by default when passed in as props
+    if (this.props.showSearch) {
+       utilSpace = <input onChange={this.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='Search' />
      }
-     else {
-        utilSpace = (
+    else {
+       utilSpace = (
            <h2>
             <Link to='/search'>Back</Link>
            </h2>
@@ -34,7 +44,14 @@ const {func, bool, string } = React.PropTypes
 Header.propType = {
   handleSearchTermChange: func,
   showSearch: bool,
-  searchTerm: string
+  searchTerm: string,
+  dispatch: func
 }
 
-export default Header
+const mapStateToPros = (state) => {
+   return {
+      searchTerm: state.searchTerm
+   }
+}
+
+export default connect(mapStateToPros)(Header)
