@@ -5,6 +5,7 @@ const DEFAULT_STATE = {
 }
 
 const setSearchTerm = (state, action) => {
+  console.log("state ", state)
   const newState = {}
 
   Object.assign(newState, state, {searchTerm: action.searchTerm})
@@ -13,6 +14,7 @@ const setSearchTerm = (state, action) => {
 }
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
+  
   switch (action.type) {
     
     case SET_SEARCH_TERM:

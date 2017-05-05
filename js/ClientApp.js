@@ -12,6 +12,8 @@ import preload from '../public/data.json'
 
 const App = React.createClass({
   render () {
+		console.log(Provider)
+		
     return (
 			<BrowserRouter>
 			  <Provider store={store}>
